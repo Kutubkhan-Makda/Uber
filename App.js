@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 
 export default function App() {
   return (
-    <Provider>
+    <Provider store={}>
       <View style={styles.container}>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Kutubkhan Makda</Text>
