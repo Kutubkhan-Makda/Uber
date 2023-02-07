@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 
 const NavOptions = () => {
@@ -10,5 +10,3 @@ const NavOptions = () => {
 }
 
 export default NavOptions
-
-const styles = StyleSheet.create({})
