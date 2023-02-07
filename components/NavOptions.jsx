@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
 const data = [
@@ -18,9 +18,16 @@ const data = [
 
 const NavOptions = () => {
   return (
-    <View>
-      <Text>NavOptions</Text>
-    </View>
+    <FlatList 
+    data={data} 
+    keyExtractor={(item)=>item.id}
+    renderItem={({item})=>(
+      <TouchableOpacity>
+        <View>
+          <Image source={{uri:item.image}} style={{width:120,height:120,resizeMode:'contain'}}/>
+        </View>
+      </TouchableOpacity>
+    )}/>
   )
 }
 
