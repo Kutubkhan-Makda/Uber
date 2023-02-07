@@ -20,11 +20,13 @@ const NavOptions = () => {
   return (
     <FlatList 
     data={data} 
+    horizontal
     keyExtractor={(item)=>item.id}
     renderItem={({item})=>(
       <TouchableOpacity>
         <View>
           <Image source={{uri:item.image}} style={{width:120,height:120,resizeMode:'contain'}}/>
+          <Text>{item.title}</Text>
         </View>
       </TouchableOpacity>
     )}/>
