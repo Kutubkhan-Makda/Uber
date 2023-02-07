@@ -1,5 +1,6 @@
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { Icon } from 'react-native-vector-icons/Icon';
 
 const data = [
   {
@@ -27,6 +28,7 @@ const NavOptions = () => {
         <View>
           <Image source={{uri:item.image}} style={{width:120,height:120,resizeMode:'contain'}}/>
           <Text className='mt-2 text-lg font-semibold'>{item.title}</Text>
+          <Icon type='antdesign' name='arrowright' color='white'/>
         </View>
       </TouchableOpacity>
     )}/>
