@@ -1,25 +1,23 @@
 import react from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Platform, StatusBar, Text, View } from 'react-native';
 import {Provider} from 'react-redux'
+import HomeScreen from './Screens/HomeScreen';
 import { store } from './store';
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Kutubkhan Makda</Text>
-        <Text>Maleka</Text>
-      </View>
+      <SafeAreaView style={styles.AndroidSafeArea}>
+        <HomeScreen/>
+      </SafeAreaView>
     </Provider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  AndroidSafeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  }
 });
