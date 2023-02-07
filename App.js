@@ -1,5 +1,6 @@
 import react from 'react';
 import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Provider} from 'react-redux'
 import HomeScreen from './Screens/HomeScreen';
 import { store } from './store';
@@ -8,7 +9,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <SafeAreaView style={styles.AndroidSafeArea}>
-        <HomeScreen/>
+        <SafeAreaProvider>
+          <HomeScreen/>
+        </SafeAreaProvider>
       </SafeAreaView>
     </Provider>
   );
