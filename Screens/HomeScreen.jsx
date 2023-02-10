@@ -1,6 +1,7 @@
 import { Image, Text, View } from 'react-native'
 import React from 'react'
 import NavOptions from '../components/NavOptions'
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 const HomeScreen = () => {
   return (
