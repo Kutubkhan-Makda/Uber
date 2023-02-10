@@ -28,7 +28,7 @@ const NavOptions = () => {
         <View>
           <Image source={{uri:item.image}} style={{width:120,height:120,resizeMode:'contain'}}/>
           <Text className='mt-2 text-lg font-semibold'>{item.title}</Text>
-          <Icon className='p-2 w-10 bg-black rounded-full mt-4' type='antdesign' name='arrowright' color='white'/>
+          <Icon style={{backgroundColor:'#000',padding:5,marginTop:18,borderRadius:9999,width:35}} type='antdesign' name='arrowright' color='white'/>
         </View>
       </TouchableOpacity>
     )}/>
