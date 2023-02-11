@@ -2,6 +2,7 @@ import { Image, Text, View } from 'react-native'
 import React from 'react'
 import NavOptions from '../components/NavOptions'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+import { GOOGLE_MAPS_KEY } from '@env'
 
 const HomeScreen = () => {
   return (
