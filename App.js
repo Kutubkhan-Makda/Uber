@@ -1,5 +1,5 @@
 import react from 'react';
-import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, Platform, StatusBar, KeyboardAvoidingView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Provider} from 'react-redux'
 import HomeScreen from './Screens/HomeScreen';
@@ -16,10 +16,12 @@ export default function App() {
       <SafeAreaView style={styles.AndroidSafeArea}>
         <NavigationContainer>
           <SafeAreaProvider>
-            <Stack.Navigator>
-              <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-              <Stack.Screen name="MapScreen" component={MapScreen} options={{headerShown:false}}/>
-            </Stack.Navigator>
+            <KeyboardAvoidingView className='flex-1' behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+              <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
+                <Stack.Screen name="MapScreen" component={MapScreen} options={{headerShown:false}}/>
+              </Stack.Navigator>
+            </KeyboardAvoidingView>
           </SafeAreaProvider>
         </NavigationContainer>
       </SafeAreaView>
