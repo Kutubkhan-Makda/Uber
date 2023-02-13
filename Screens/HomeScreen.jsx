@@ -9,6 +9,8 @@ const HomeScreen = () => {
     <View className='bg-white h-full'>
       <View className='p-5'>
         <Image source={{uri:'https://links.papareact.com/gzs'}} style={{width:100,height:100,resizeMode:'contain'}}/>
+        <GooglePlacesAutocomplete nearbyPlacesAPI='GooglePlacesSearch' debounce={400} placeholder='Where from ?' styles={{
+          container:{flex:0},textInput:{fontSize:18}}} query={{key:GOOGLE_MAPS_KEY,language:'en'}}/>
         <NavOptions/>
       </View>
     </View>
