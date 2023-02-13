@@ -8,7 +8,13 @@ const NavigateCard = () => {
       <Text className='text-center py-5 text-xl'>NavigateCard</Text>
       <View className='border-t border-gray-200 flex-shrink'>
         <View>
-            <GooglePlacesAutocomplete placeholder=''/>
+            <GooglePlacesAutocomplete 
+            placeholder='Where to?' 
+            styles={toInputBoxStyle} 
+            fetchDetails={true}
+            enablePoweredByContainer={false}
+            nearbyPlacesAPI='GooglePlacesSearch' 
+            debounce={400}/>
         </View>
       </View>
     </View>
@@ -17,4 +23,19 @@ const NavigateCard = () => {
 
 export default NavigateCard
 
-const styles = StyleSheet.create({})
+const toInputBoxStyle = StyleSheet.create({
+    container:{
+        backgroundColor:'white',
+        paddingTop:20,
+        flex:0,
+    },
+    textInput:{
+        backgroundColor:'#DDDDDF',
+        borderRadius:0,
+        fontSize:18,
+    },
+    textInputContainer:{
+        paddingHorizontal:20,
+        paddingBottom:0,
+    }
+})
