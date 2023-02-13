@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+import { GOOGLE_MAPS_KEY } from '@env'
 
 const NavigateCard = () => {
   return (
@@ -11,6 +12,7 @@ const NavigateCard = () => {
             <GooglePlacesAutocomplete 
             placeholder='Where to?' 
             styles={toInputBoxStyle} 
+            query={{key:GOOGLE_MAPS_KEY,language:'en'}} 
             fetchDetails={true}
             enablePoweredByContainer={false}
             nearbyPlacesAPI='GooglePlacesSearch' 
