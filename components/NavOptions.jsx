@@ -30,7 +30,7 @@ const NavOptions = () => {
     horizontal
     keyExtractor={(item)=>item.id}
     renderItem={({item})=>(
-      <TouchableOpacity onPress={()=>navigation.navigate(item.screen)} className='p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40' disabled={!origin}>
+      <TouchableOpacity onPress={()=>navigation.navigate(item.screen)} className='p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40'>
         <View className={!origin && 'opacity-20'}>
           <Image source={{uri:item.image}} style={{width:120,height:120,resizeMode:'contain'}}/>
           <Text className='mt-2 text-lg font-semibold'>{item.title}</Text>
@@ -42,3 +42,5 @@ const NavOptions = () => {
 }
 
 export default NavOptions
+
+// add disabled={!origin} in touchableopacity
