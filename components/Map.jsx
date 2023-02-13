@@ -5,13 +5,22 @@ import { useSelector } from 'react-redux'
 import { selectDestination, selectOrigin } from '../slices/navSlice'
 import MapViewDirections from 'react-native-maps-directions'
 import { GOOGLE_MAPS_KEY } from '@env'
+import { useRef } from 'react'
+import { useEffect } from 'react'
 
 const Map = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if(!origin || !destination) return;
+  }, [origin,destination])
+  
 
   return (
     <MapView 
+    ref={mapRef}
     className='flex-1' 
     mapType='satellite' 
     initialRegion={{latitude:37.78825,longitude:-122.4324,latitudeDelta:0.0722,longitudeDelta:0.0321,}}>
