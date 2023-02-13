@@ -3,8 +3,11 @@ import React from 'react'
 import NavOptions from '../components/NavOptions'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { GOOGLE_MAPS_KEY } from '@env'
+import { useDispatch } from 'react-redux'
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
+
   return (
     <View className='bg-white h-full'>
       <View className='p-5'>
