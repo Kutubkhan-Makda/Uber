@@ -50,6 +50,11 @@ const RideOptionCard = () => {
           <Text className='text-xl'>$99</Text>
         </TouchableOpacity>
       )}/>
+      <View>
+        <TouchableOpacity className={!selected?'bg-gray-300 py-3 m-3':'bg-black py-3 m-3'} disabled={!selected}>
+          <Text className='text-center text-white text-xl'>Choose {selected?.title}</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
