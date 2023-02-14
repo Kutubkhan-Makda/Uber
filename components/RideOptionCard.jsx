@@ -35,7 +35,14 @@ const RideOptionCard = () => {
         </TouchableOpacity>
         <Text className='text-center text-xl py-5'>Select A Ride</Text>
       </View>
-      <FlatList/>
+      <FlatList 
+      data={data} 
+      keyExtractor={item => item.id} 
+      renderItem={({item})=>(
+        <TouchableOpacity>
+          <Text></Text>
+        </TouchableOpacity>
+      )}/>
     </View>
   )
 }
