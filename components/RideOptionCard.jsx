@@ -1,7 +1,8 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Icon } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const data = [
   {
@@ -28,7 +29,7 @@ const RideOptionCard = () => {
   const navigation = useNavigation();
 
   return (
-    <View className='bg-white flex-grow'>
+    <SafeAreaView style={styles.AndroidSafeArea} className='bg-white flex-grow'>
       <View>
         <TouchableOpacity onPress={()=>navigation.navigate('NavigateCard')} className='absolute top-3 left-5 z-50 p-3 rounded-full'>
           <Icon name='chevron-left' type='fontawsome'/>
@@ -38,15 +39,25 @@ const RideOptionCard = () => {
       <FlatList 
       data={data} 
       keyExtractor={item => item.id} 
-      renderItem={({item})=>(
+      renderItem={({item:{title,image,multiplier,id},item})=>(
         <TouchableOpacity>
-          <Text></Text>
+          <Image style={{width:100,height:100,resizeMode:'contain'}} source={{uri:image}}/>
+          <View>
+            <Text>{title}</Text>
+            <Text>Travel Time...</Text>
+          </View>
         </TouchableOpacity>
       )}/>
-    </View>
+    </SafeAreaView>
   )
 }
 
 export default RideOptionCard
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  AndroidSafeArea: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  }
+});
