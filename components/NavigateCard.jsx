@@ -14,7 +14,7 @@ const NavigateCard = () => {
 
   return (
     <View className='bg-white flex-1'>
-      <Text className='text-center py-5 text-xl'>NavigateCard</Text>
+      <Text className='text-center py-4 text-xl'>NavigateCard</Text>
       <View className='border-t border-gray-200 flex-shrink'>
         <View>
             <GooglePlacesAutocomplete 
@@ -32,9 +32,14 @@ const NavigateCard = () => {
         </View>
         <NavFavourites/>
       </View>
-      <View>
-        <TouchableOpacity>
-
+      <View className='flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100'>
+        <TouchableOpacity onPress={()=>navigation.navigate('RideOptionCard')} className='flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full'>
+          <Icon name='car' type='font-awesome' color='white' size={16}/>
+          <Text className='text-white text-center'>Rides</Text>
+        </TouchableOpacity>
+        <TouchableOpacity className='flex flex-row justify-between w-24 px-4 py-3 rounded-full'>
+          <Icon name='fast-food-outline' type='ionicon' color='black' size={16}/>
+          <Text className='text-center'>Eats</Text>
         </TouchableOpacity>
       </View>
     </View>
