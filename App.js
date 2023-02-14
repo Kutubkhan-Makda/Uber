@@ -16,7 +16,7 @@ export default function App() {
       <SafeAreaView style={styles.AndroidSafeArea}>
         <NavigationContainer>
           <SafeAreaProvider>
-            <KeyboardAvoidingView className='flex-1' behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+            <KeyboardAvoidingView className='flex-1' behavior={Platform.OS === 'ios' ? -64 : 'height'}>
               <Stack.Navigator>
                 <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
                 <Stack.Screen name="MapScreen" component={MapScreen} options={{headerShown:false}}/>

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { GOOGLE_MAPS_KEY } from '@env'
@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { setDestination } from '../slices/navSlice'
 import { useNavigation } from '@react-navigation/native'
 import NavFavourites from './NavFavourites'
+import { Icon } from '@rneui/themed';
 
 const NavigateCard = () => {
     const dispatch = useDispatch();
@@ -30,6 +31,11 @@ const NavigateCard = () => {
             debounce={400}/>
         </View>
         <NavFavourites/>
+      </View>
+      <View>
+        <TouchableOpacity>
+
+        </TouchableOpacity>
       </View>
     </View>
   )
