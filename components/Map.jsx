@@ -16,9 +16,18 @@ const Map = () => {
   useEffect(() => {
     if(!origin || !destination) return;
     mapRef.current.fitToSuppliedMarkers(['origin','destination'],{edgePadding:{top:50,bottom:50,left:50,right:50}})
-  }, [origin,destination])
-  
+  }, [origin,destination]);
 
+  useEffect(()=>{
+    if(!origin || !destination) return;
+    const getTravelTime = async ()=>{
+      fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_KEY}`)
+      .then(res => res.json())
+      .then(data => {})
+    }
+    getTravelTime();
+  },[origin,destination,GOOGLE_MAPS_KEY])
+  
   return (
     <MapView 
     ref={mapRef}
