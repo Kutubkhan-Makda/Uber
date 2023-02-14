@@ -41,7 +41,7 @@ const RideOptionCard = () => {
       data={data} 
       keyExtractor={item => item.id} 
       renderItem={({item:{title,image,multiplier,id},item})=>(
-        <TouchableOpacity className='flex-row items-center justify-between px-10'>
+        <TouchableOpacity onPress={()=>setSelected(item)} className='flex-row items-center justify-between px-10'>
           <Image style={{width:100,height:100,resizeMode:'contain'}} source={{uri:image}}/>
           <View className='-ml-6'>
             <Text className='text-xl font-semibold'>{title}</Text>
